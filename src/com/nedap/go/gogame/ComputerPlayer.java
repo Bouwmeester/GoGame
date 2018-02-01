@@ -15,7 +15,7 @@ public class ComputerPlayer implements Player {
 	public String getName() {
 		return name; 
 		
-	}
+	}   // comment
 	
 	public int determineMove(int x, int y) {
 		
