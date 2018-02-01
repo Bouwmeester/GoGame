@@ -71,7 +71,7 @@ public class Client {
 		ClientConnection clientConnection = null;
 
 		try {
-			csock = new Socket("10.7.16.121", port);			//change "127.0.0.1" //"10.7.16.121"
+			csock = new Socket("NVC3497", port);			//change "127.0.0.1" //"10.7.16.121" //"
 			System.out.println("Connected to server " + playerName);  
 			// new thread to handle server output without client input.			
 			clientConnection = new ClientConnection(csock, name);

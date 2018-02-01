@@ -75,12 +75,12 @@ public class ClientConnection extends Thread {
 						boolean isWhite = false;
 						if (name.equals(serverInputs[1])) {
 							if (color.equals("white")) {
-								isWhite = true;
-							} else {
 								isWhite = false;
+							} else {
+								isWhite = true;	
 							}
-						}
-						gogui.addStone(x, y, isWhite);
+							gogui.addStone(x, y, isWhite);
+						}	
 					}
 					System.out.println("TURN player1 x_y player2");
 					if (serverInputs[3].equals(name)) {
