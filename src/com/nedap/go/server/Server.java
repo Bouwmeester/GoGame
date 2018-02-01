@@ -73,7 +73,10 @@ public class Server {
 						+ serverName + Protocol.General.DELIMITER1 + Protocol.Client.VERSION + 
 						Protocol.General.DELIMITER1 + Protocol.Client.VERSIONNO + 
 						Protocol.General.DELIMITER1 + Protocol.Client.EXTENSIONS +
-						Protocol.General.DELIMITER1 + "0 0 0 0 0 0 0");
+						Protocol.General.DELIMITER1 + 0 + Protocol.General.DELIMITER1 +
+						0 + Protocol.General.DELIMITER1 + 0 + Protocol.General.DELIMITER1 + 0 +
+						Protocol.General.DELIMITER1 + 0 + Protocol.General.DELIMITER1 + 0 +
+						Protocol.General.DELIMITER1 + 0 + Protocol.General.COMMAND_END);
 				
 			}
 			

@@ -13,6 +13,8 @@ public class Client {
 	private static final String USAGE =
 			"Usage: java Client " + Client.class.getName() + " name port";
 	
+	private static String name;
+	
 	//private static GoGUIIntegrator gogui;
 
 	/**
@@ -36,6 +38,7 @@ public class Client {
 		String playerName = " ";
 		try {
 			playerName = nameInput.readLine();
+			name = playerName;
 			System.out.println(playerName);
 
 			
@@ -68,10 +71,10 @@ public class Client {
 		ClientConnection clientConnection = null;
 
 		try {
-			csock = new Socket("127.0.0.1", port);			//change 127.0.0.1
+			csock = new Socket("10.7.16.121", port);			//change "127.0.0.1" //"10.7.16.121"
 			System.out.println("Connected to server " + playerName);  
 			// new thread to handle server output without client input.			
-			clientConnection = new ClientConnection(csock);
+			clientConnection = new ClientConnection(csock, name);
 			clientConnection.start();
 		} catch (IOException e) {
 			System.out.println("Error: could not create a socket on port" + port);
@@ -89,7 +92,10 @@ public class Client {
 					+ playerName + Protocol.General.DELIMITER1 + Protocol.Client.VERSION + 
 					Protocol.General.DELIMITER1 + Protocol.Client.VERSIONNO + 
 					Protocol.General.DELIMITER1 + Protocol.Client.EXTENSIONS +
-					Protocol.General.DELIMITER1 + "0 0 0 0 0 0 0");
+					Protocol.General.DELIMITER1 + 0 + Protocol.General.DELIMITER1 +
+					0 + Protocol.General.DELIMITER1 + 0 + Protocol.General.DELIMITER1 + 0 +
+					Protocol.General.DELIMITER1 + 0 + Protocol.General.DELIMITER1 + 0 +
+					Protocol.General.DELIMITER1 + 0 ); //Protocol.General.COMMAND_END);
 			
 			
 			String commandInput;
